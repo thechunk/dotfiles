@@ -96,8 +96,8 @@ let mapleader=","
 let g:mapleader=","
 
 nnoremap <silent> <leader>/ :nohlsearch<CR>
-nnoremap <silent> <leader>] gt
-nnoremap <silent> <leader>[ gT
+nnoremap <silent> <leader>n gt
+nnoremap <silent> <leader>p gT
 nnoremap <silent> <leader>t :tabnew<CR>
 nnoremap <silent> <leader>qq :bw<CR>
 
