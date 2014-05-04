@@ -55,9 +55,6 @@ let g:lightline={
 " bufferline
 let g:bufferline_echo=1
 let g:bufferline_fname_mod=':t'
-"autocmd VimEnter *
-"\ let &statusline='%{bufferline#refresh_status()}'
-"  \ .bufferline#get_status_string()
 
 " UI
 set so=7
@@ -74,7 +71,6 @@ set showmatch
 set mat=2
 
 set ruler
-"set nu
 set relativenumber
 if exists('+colorcolumn')
     set colorcolumn=80
@@ -87,16 +83,25 @@ syntax enable
 colorscheme Tomorrow-Night-Bright
 color Tomorrow-Night-Bright
 
+set guifont=Source\ Code\ Pro\ for\ Powerline:h16
+
 set encoding=utf8
 set ffs=unix,dos,mac
 
 set exrc
 set secure
 
-if has("gui_running")
-    set guifont=Source\ Code\ Pro\ for\ Powerline:h16
+" Bindings
+let mapleader=","
+let g:mapleader=","
 
-    " Mappings
+nnoremap <silent> <leader>/ :nohlsearch<CR>
+nnoremap <silent> <leader>] gt
+nnoremap <silent> <leader>[ gT
+nnoremap <silent> <leader>t :tabnew<CR>
+nnoremap <silent> <leader>qq :bw<CR>
+
+if has("gui_running")
     " map each number to its shift-key character
     inoremap 1 !
     inoremap 2 @
@@ -125,7 +130,7 @@ else
     set t_Co=256
 endif
 
-" Tabs
+" Indentation
 set expandtab
 set smarttab
 set shiftwidth=4
