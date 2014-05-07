@@ -1,8 +1,12 @@
-[color]
-	ui = auto
-[core]
-	fileMode = false
-	autocrlf = false
 [user]
 	name = Russell Cheung
 	email = thechunk@gmail.com
+[core]
+    editor = /usr/bin/vim
+	autocrlf = input
+	fileMode = false
+[color]
+	ui = auto
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
