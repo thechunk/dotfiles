@@ -5,6 +5,8 @@
     editor = /usr/bin/vim
 	autocrlf = input
 	fileMode = false
+[push]
+	default = simple
 [color]
 	ui = auto
 [filter "media"]
