@@ -9,7 +9,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Monospace 9
+font = M+ 1m 16
 scrollback_lines = 1000
 search_wrap = true
 #icon_name = terminal
@@ -19,7 +19,7 @@ search_wrap = true
 cursor_blink = system
 
 # "block", "underline" or "ibeam"
-cursor_shape = block
+cursor_shape = ibeam
 
 # $BROWSER is used by default
 #browser = firefox
@@ -35,32 +35,26 @@ cursor_shape = block
 #modify_other_keys = false
 
 [colors]
-foreground = #dcdccc
-foreground_bold = #ffffff
-#foreground_dim = #888888
-background = #3f3f3f
-#cursor = #dcdccc
-
-# if unset, will reverse foreground and background
-highlight = #2f2f2f
-
-# colors from color0 to color254 can be set
-color0 = #3f3f3f
-color1 = #705050
-color2 = #60b48a
-color3 = #dfaf8f
-color4 = #506070
-color5 = #dc8cc3
-color6 = #8cd0d3
-color7 = #dcdccc
-color8 = #709080
-color9 = #dca3a3
-color10 = #c3bf9f
-color11 = #f0dfaf
-color12 = #94bff3
-color13 = #ec93d3
-color14 = #93e0e3
-color15 = #ffffff
+# tomorrow night bright
+foreground =   #eaeaea
+background =   #000000
+cursor =       #aeafad
+color0 =       #000000
+color1 =       #912226
+color2 =       #778900
+color3 =       #ae7b00
+color4 =       #1d2594
+color5 =       #682a9b
+color6 =       #2b6651
+color7 =       #929593
+color8 =       #666666
+color9 =       #cc6666
+color10 =      #b5bd68
+color11 =      #f0c674
+color12 =      #81a2be
+color13 =      #b294bb
+color14 =      #8abeb7
+color15 =      #ecebec
 
 [hints]
 #font = Monospace 12
