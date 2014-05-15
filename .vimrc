@@ -102,6 +102,9 @@ nnoremap <silent> <leader>p gT
 nnoremap <silent> <leader>t :tabnew<CR>
 nnoremap <silent> <leader>qq :bw<CR>
 
+nnoremap <silent> <left> :bp<CR>
+nnoremap <silent> <right> :bn<CR>
+
 if has("gui_running")
     " map each number to its shift-key character
     inoremap 1 !
