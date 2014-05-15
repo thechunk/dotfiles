@@ -1,1 +1,1 @@
-export TERMINAL="urxvt"
+export TERMINAL=termite
