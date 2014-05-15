@@ -5,7 +5,7 @@
 local theme = {}
 
 -- Default settings
-theme.font = "Envy Code R normal 10"
+theme.font = "M+ 1m normal 11"
 theme.fg   = "#fff"
 theme.bg   = "#000"
 
