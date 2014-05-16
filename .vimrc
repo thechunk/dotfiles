@@ -10,17 +10,30 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 Bundle 'gmarik/Vundle.vim'
-Bundle 'scrooloose/nerdtree'
+
+" Bundles - Language-specific
 Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-surround'
+Bundle 'einars/js-beautify'
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'scrooloose/syntastic'
+
+" Bundles - Source control
+Bundle 'tpope/vim-fugitive'
+
+" Bundles - Editing
 Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tpope/vim-fugitive'
-"Bundle 'bling/vim-airline'
-Bundle 'bling/vim-bufferline'
 Bundle 'thinca/vim-localrc'
+Bundle 'editorconfig/editorconfig-vim'
+
+" Bundles - Functional
 Bundle 'yegappan/grep'
+
+" Bundles - UI
 Bundle 'itchyny/lightline.vim'
+Bundle 'bling/vim-bufferline'
+Bundle 'scrooloose/nerdtree'
 
 " General
 filetype plugin indent on
@@ -84,7 +97,7 @@ syntax enable
 colorscheme Tomorrow-Night-Bright
 color Tomorrow-Night-Bright
 
-set guifont=Source\ Code\ Pro\ for\ Powerline:h16
+set guifont=M+\ 2m:h16
 
 set encoding=utf8
 set ffs=unix,dos,mac
