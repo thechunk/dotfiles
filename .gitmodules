@@ -10,3 +10,6 @@
 [submodule "vendor/powerline"]
 	path = vendor/powerline
 	url = git@github.com:Lokaltog/powerline.git
+[submodule "vendor/luakit-plugins"]
+	path = vendor/luakit-plugins
+	url = git@github.com:thechunk/luakit-plugins.git
