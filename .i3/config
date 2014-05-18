@@ -19,10 +19,16 @@ set $mod Mod1
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
-font pango:M+ 2m 11
+font pango:M+ 2m 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# alsa controls
+bindsym $mod+plus exec amixer -c 0 set Master 1dB+
+bindsym $mod+minus exec amixer -c 0 set Master 1dB-
+bindsym $mod+Shift+plus exec amixer -c 0 set Master 100%
+bindsym $mod+Shift+minus exec amixer -c 0 set Master toggle
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -31,7 +37,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -dim 0.3 -fn "M+ 2m-16"'
+bindsym $mod+F2 exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -dim 0.3 -fn "M+ 2m-16"'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -88,7 +94,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -147,12 +153,28 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# class                 border  backgr. text    indicator
+client.focused          #373b41 #282a2e #c5c8c6 #b5bd68
+client.focused_inactive #373b41 #1d1f21 #969896 #969896
+client.unfocused        #373b41 #282a2e #888888 #969896
+client.urgent           #d54e53 #d54e53 #eaeaea #d54e53
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        font pango:M+ 2m, Icons 12
+        position top
         status_command i3status
+        colors {
+                background #1d1f21
+                statusline #eaeaea
+
+                focused_workspace  #424242 #282a2e #eaeaea 
+                active_workspace   #c5c8c6 #373b41
+                inactive_workspace #969896 #282a2e
+                urgent_workspace   #eaeaea #d54e53
+        }
 }
 
 # autostart
-#sh ~/.fehbg &
 exec compton
