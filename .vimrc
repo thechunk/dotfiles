@@ -26,6 +26,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'thinca/vim-localrc'
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'vim-scripts/PreserveNoEOL'
 
 " Bundles - Functional
 Bundle 'yegappan/grep'
@@ -70,6 +71,9 @@ let g:lightline={
 let g:bufferline_echo=1
 let g:bufferline_fname_mod=':t'
 
+" preservenoeol
+let g:PreserveNoEOL=1
+
 " UI
 set so=7
 set wildmenu
@@ -99,6 +103,7 @@ color Tomorrow-Night-Bright
 
 set guifont=M+\ 2m:h16
 
+set noeol
 set encoding=utf8
 set ffs=unix,dos,mac
 
@@ -113,12 +118,16 @@ nnoremap <silent> <leader>/ :nohlsearch<CR>
 nnoremap <silent> <leader>n gt
 nnoremap <silent> <leader>p gT
 nnoremap <silent> <leader>t :tabnew<CR>
+nnoremap <silent> <leader>s :sp<CR>
+nnoremap <silent> <leader>v :vsp<CR>
 nnoremap <silent> <leader>qq :bw<CR>
 
 nnoremap <silent> <left> :bp<CR>
 nnoremap <silent> <right> :bn<CR>
 
 if has("gui_running")
+    let g:lightline={}
+
     " map each number to its shift-key character
     inoremap 1 !
     inoremap 2 @
