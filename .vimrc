@@ -26,7 +26,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'thinca/vim-localrc'
 Bundle 'editorconfig/editorconfig-vim'
-Bundle 'vim-scripts/PreserveNoEOL'
 
 " Bundles - Functional
 Bundle 'yegappan/grep'
@@ -103,7 +102,6 @@ color Tomorrow-Night-Bright
 
 set guifont=M+\ 2m:h16
 
-set noeol
 set encoding=utf8
 set ffs=unix,dos,mac
 
@@ -165,4 +163,3 @@ set tabstop=4
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
-
