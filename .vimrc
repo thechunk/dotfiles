@@ -6,40 +6,45 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Bundle 'gmarik/Vundle.vim'
 
 " Bundles - Language-specific
-Bundle 'mattn/emmet-vim'
-Bundle 'tpope/vim-surround'
 Bundle 'einars/js-beautify'
 Bundle 'maksimr/vim-jsbeautify'
+Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-scripts/matchit.zip'
 
 " Bundles - Source control
 Bundle 'tpope/vim-fugitive'
 
 " Bundles - Editing
+Bundle 'editorconfig/editorconfig-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'thinca/vim-localrc'
-Bundle 'editorconfig/editorconfig-vim'
+Bundle 'tpope/vim-commentary'
+Bundle 'vim-scripts/AutoClose'
 
 " Bundles - Functional
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-characterize'
+Bundle 'vim-scripts/taglist.vim'
 Bundle 'yegappan/grep'
 
 " Bundles - UI
-Bundle 'itchyny/lightline.vim'
 Bundle 'bling/vim-bufferline'
-Bundle 'scrooloose/nerdtree'
+Bundle 'itchyny/lightline.vim'
+
+call vundle#end()
 
 " General
 filetype plugin indent on
-
 set autoread
-runtime macros/matchit.vim
 
 " ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
@@ -51,11 +56,6 @@ let g:ctrlp_max_height=16
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 let g:ctrlp_clear_cache_on_exit=0
-
-" airline
-let g:airline_powerline_fonts=1
-let g:airline#extensions#bufferline#enabled = 0
-set laststatus=2
 
 " lightline
 let g:lightline={
@@ -74,6 +74,8 @@ let g:bufferline_fname_mod=':t'
 let g:PreserveNoEOL=1
 
 " UI
+set laststatus=2
+
 set so=7
 set wildmenu
 
@@ -107,6 +109,16 @@ set ffs=unix,dos,mac
 
 set exrc
 set secure
+
+" Indentation
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+
+set autoindent
+set smartindent
+set wrap
 
 " Bindings
 let mapleader=","
@@ -153,13 +165,3 @@ if has("gui_running")
 else
     set t_Co=256
 endif
-
-" Indentation
-set expandtab
-set smarttab
-set shiftwidth=4
-set tabstop=4
-
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines

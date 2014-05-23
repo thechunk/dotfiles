@@ -43,6 +43,8 @@ bindsym $mod+F2 exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -dim 0.3
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+bindsym $mod+F1 exec --no-startup-id i3lock -c "#000000"
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -149,6 +151,7 @@ mode "resize" {
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym q mode "default"
 }
 
 bindsym $mod+r mode "resize"

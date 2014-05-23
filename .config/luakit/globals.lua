@@ -56,7 +56,7 @@ search_engines = {
     google      = "https://google.com/search?q=%s",
     imdb        = "http://www.imdb.com/find?s=all&q=%s",
     wikipedia   = "https://en.wikipedia.org/wiki/Special:Search?search=%s",
-    aur         = "https://aur.archlinux.org/packages/?O=0&K=%s",
+    aur         = "https://aur.archlinux.org/packages/?O=0&K=%s&SB=v&SO=d",
     arch        = "https://www.archlinux.org/packages/?sort=&q=%s&maintainer=&flagged=",
 }
 
