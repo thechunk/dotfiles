@@ -23,16 +23,19 @@ Bundle 'vim-scripts/matchit.zip'
 Bundle 'tpope/vim-fugitive'
 
 " Bundles - Editing
-Bundle 'editorconfig/editorconfig-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'thinca/vim-localrc'
+Bundle 'tpope/vim-capslock'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-sleuth'
 Bundle 'vim-scripts/AutoClose'
 
 " Bundles - Functional
+Bundle 'editorconfig/editorconfig-vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'thinca/vim-localrc'
 Bundle 'tpope/vim-characterize'
+Bundle 'tpope/vim-repeat'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'yegappan/grep'
 
