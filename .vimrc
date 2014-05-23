@@ -32,11 +32,11 @@ Bundle 'vim-scripts/AutoClose'
 
 " Bundles - Functional
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
 Bundle 'thinca/vim-localrc'
 Bundle 'tpope/vim-characterize'
 Bundle 'tpope/vim-repeat'
-Bundle 'vim-scripts/taglist.vim'
 Bundle 'yegappan/grep'
 
 " Bundles - UI
@@ -75,6 +75,9 @@ let g:bufferline_fname_mod=':t'
 
 " preservenoeol
 let g:PreserveNoEOL=1
+
+" tagbar
+let g:tagbar_autofocus=1
 
 " UI
 set laststatus=2
@@ -137,6 +140,8 @@ nnoremap <silent> <leader>qq :bw<CR>
 
 nnoremap <silent> <left> :bp<CR>
 nnoremap <silent> <right> :bn<CR>
+
+noremap <silent> <C-g> :TagbarToggle<CR>
 
 if has("gui_running")
     let g:lightline={}
