@@ -1,2 +1,2 @@
 export TERMINAL="termite"
-export BROWSER="luakit"
+export BROWSER="dwb"
