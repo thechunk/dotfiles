@@ -25,7 +25,7 @@ Bundle 'tpope/vim-fugitive'
 " Bundles - Editing
 Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tpope/vim-capslock'
+" Bundle 'tpope/vim-capslock'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-sleuth'
 Bundle 'vim-scripts/AutoClose'
