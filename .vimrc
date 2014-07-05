@@ -6,8 +6,14 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has("win32")
+    set rtp+=~/vimfiles/bundle/Vundle.vim
+    let path='~/vimfiles/bundle'
+    call vundle#begin(path)
+else
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+endif
 
 Bundle 'gmarik/Vundle.vim'
 
@@ -69,6 +75,11 @@ let g:lightline={
     \'subseparator': { 'left': '', 'right': '' }
 \}
 
+if has("win32") || has("gui_running")
+    unlet g:lightline.separator
+    unlet g:lightline.subseparator
+endif
+
 " bufferline
 let g:bufferline_echo=1
 let g:bufferline_fname_mod=':t'
@@ -97,7 +108,7 @@ set mat=2
 
 set ruler
 set relativenumber
-if exists('+colorcolumn')
+if exists("+colorcolumn")
     set colorcolumn=80
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
@@ -108,7 +119,11 @@ syntax enable
 colorscheme Tomorrow-Night-Bright
 color Tomorrow-Night-Bright
 
-set guifont=M+\ 2m:h16
+if has("win32")
+    set guifont=M+_2m_regular:h16
+else
+    set guifont=M+\ 2m:h16
+fi
 
 set encoding=utf8
 set ffs=unix,dos,mac
@@ -147,28 +162,28 @@ if has("gui_running")
     let g:lightline={}
 
     " map each number to its shift-key character
-    inoremap 1 !
-    inoremap 2 @
-    inoremap 3 #
-    inoremap 4 $
-    inoremap 5 %
-    inoremap 6 ^
-    inoremap 7 &
-    inoremap 8 *
-    inoremap 9 (
-    inoremap 0 )
-    "inoremap - _
+    " inoremap 1 !
+    " inoremap 2 @
+    " inoremap 3 #
+    " inoremap 4 $
+    " inoremap 5 %
+    " inoremap 6 ^
+    " inoremap 7 &
+    " inoremap 8 *
+    " inoremap 9 (
+    " inoremap 0 )
+    " "inoremap - _
     " and then the opposite
-    inoremap ! 1
-    inoremap @ 2
-    inoremap # 3
-    inoremap $ 4
-    inoremap % 5
-    inoremap ^ 6
-    inoremap & 7
-    inoremap * 8
-    inoremap ( 9
-    inoremap ) 0
+    " inoremap ! 1
+    " inoremap @ 2
+    " inoremap # 3
+    " inoremap $ 4
+    " inoremap % 5
+    " inoremap ^ 6
+    " inoremap & 7
+    " inoremap * 8
+    " inoremap ( 9
+    " inoremap ) 0
     "inoremap _ -
 else
     set t_Co=256
