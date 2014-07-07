@@ -123,7 +123,7 @@ if has("win32")
     set guifont=M+_2m_regular:h16
 else
     set guifont=M+\ 2m:h16
-fi
+endif
 
 set encoding=utf8
 set ffs=unix,dos,mac
