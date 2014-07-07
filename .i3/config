@@ -21,6 +21,9 @@ set $mod Mod4
 # font pango:DejaVu Sans Mono 10
 font pango:M+ 2m 12
 
+# Special windows
+for_window [class="(?i)xfce4-notifyd"] floating enable border none
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
