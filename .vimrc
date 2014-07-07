@@ -144,32 +144,46 @@ nnoremap <silent> <right> :bn<CR>
 noremap <silent> <C-g> :TagbarToggle<CR>
 
 if has("gui_running")
-    let g:lightline={}
-
-    " map each number to its shift-key character
-    inoremap 1 !
-    inoremap 2 @
-    inoremap 3 #
-    inoremap 4 $
-    inoremap 5 %
-    inoremap 6 ^
-    inoremap 7 &
-    inoremap 8 *
-    inoremap 9 (
-    inoremap 0 )
-    "inoremap - _
-    " and then the opposite
-    inoremap ! 1
-    inoremap @ 2
-    inoremap # 3
-    inoremap $ 4
-    inoremap % 5
-    inoremap ^ 6
-    inoremap & 7
-    inoremap * 8
-    inoremap ( 9
-    inoremap ) 0
-    "inoremap _ -
+    let g:lightline={
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+    \ }
+    " " map each number to its shift-key character
+    " inoremap 1 !
+    " inoremap 2 @
+    " inoremap 3 #
+    " inoremap 4 $
+    " inoremap 5 %
+    " inoremap 6 ^
+    " inoremap 7 &
+    " inoremap 8 *
+    " inoremap 9 (
+    " inoremap 0 )
+    " "inoremap - _
+    " " and then the opposite
+    " inoremap ! 1
+    " inoremap @ 2
+    " inoremap # 3
+    " inoremap $ 4
+    " inoremap % 5
+    " inoremap ^ 6
+    " inoremap & 7
+    " inoremap * 8
+    " inoremap ( 9
+    " inoremap ) 0
+    " "inoremap _ -
 else
     set t_Co=256
 endif
