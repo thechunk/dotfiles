@@ -44,6 +44,7 @@ Bundle 'thinca/vim-localrc'
 Bundle 'tpope/vim-characterize'
 Bundle 'tpope/vim-repeat'
 Bundle 'yegappan/grep'
+Bundle 'vim-scripts/loremipsum'
 
 " Bundles - UI
 Bundle 'bling/vim-bufferline'
@@ -57,7 +58,7 @@ set autoread
 
 " ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
-let g:ctrlp_custom_ignore = 'tmp$\|\.git$\|\.hg$\|\.svn$\|.rvm$|.bundle$\|vendor'
+let g:ctrlp_custom_ignore = 'tmp$\|\.(git|hg|svn)$\|.rvm$\|.bundle$\|.sass\-cache$\|\v[\/](bower_components|node_modules|vendor)'
 let g:ctrlp_working_path_mode = 'ra'
 "let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=16
