@@ -142,6 +142,9 @@ set autoindent
 set smartindent
 set wrap
 
+set list
+set listchars=tab:⇥\ ,nbsp:·,trail:␣,extends:▸,precedes:◂,eol:$
+
 " Bindings
 let mapleader=","
 let g:mapleader=","
