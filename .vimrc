@@ -39,12 +39,13 @@ Bundle 'vim-scripts/AutoClose'
 " Bundles - Functional
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'scrooloose/nerdtree'
+" Bundle 'scrooloose/nerdtree'
 Bundle 'thinca/vim-localrc'
 Bundle 'tpope/vim-characterize'
 Bundle 'tpope/vim-repeat'
 Bundle 'yegappan/grep'
 Bundle 'vim-scripts/loremipsum'
+Bundle 'tpope/vim-vinegar'
 
 " Bundles - UI
 Bundle 'bling/vim-bufferline'
