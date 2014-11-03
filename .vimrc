@@ -124,7 +124,7 @@ color Tomorrow-Night-Bright
 if has("win32")
     set guifont=M+_2m_regular:h16
 else
-    set guifont=M+\ 2m:h16
+    set guifont=Envy\ Code\ R\ for\ Powerline:h16
 endif
 
 set encoding=utf8
