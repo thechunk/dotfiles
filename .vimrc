@@ -124,7 +124,7 @@ color Tomorrow-Night-Bright
 if has("win32")
     set guifont=M+_2m_regular:h16
 else
-    set guifont=Envy\ Code\ R\ for\ Powerline:h16
+    set guifont=Envy\ Code\ R\ for\ Powerline:h18
 endif
 
 set encoding=utf8
@@ -132,6 +132,8 @@ set ffs=unix,dos,mac
 
 set exrc
 set secure
+
+set clipboard=unnamed
 
 " Indentation
 set smarttab
