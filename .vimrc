@@ -2,17 +2,17 @@
 execute pathogen#infect()
 
 " Vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible			" be iMproved, required
+filetype off				" required
 
 " set the runtime path to include Vundle and initialize
 if has("win32")
-    set rtp+=~/vimfiles/bundle/Vundle.vim
-    let path='~/vimfiles/bundle'
-    call vundle#begin(path)
+	set rtp+=~/vimfiles/bundle/Vundle.vim
+	let path='~/vimfiles/bundle'
+	call vundle#begin(path)
 else
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
 endif
 
 Bundle 'gmarik/Vundle.vim'
@@ -34,7 +34,7 @@ Bundle 'terryma/vim-multiple-cursors'
 " Bundle 'tpope/vim-capslock'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-sleuth'
-Bundle 'vim-scripts/AutoClose'
+Bundle 'Townk/vim-autoclose'
 
 " Bundles - Functional
 Bundle 'editorconfig/editorconfig-vim'
@@ -70,16 +70,16 @@ let g:ctrlp_clear_cache_on_exit=0
 
 " lightline
 let g:lightline={
-    \'component': {
-    \    'readonly': '%{&readonly?"":""}',
-    \},
-    \'separator': { 'left': '', 'right': '' },
-    \'subseparator': { 'left': '', 'right': '' }
+	\'component': {
+	\	 'readonly': '%{&readonly?"":""}',
+	\},
+	\'separator': { 'left': '', 'right': '' },
+	\'subseparator': { 'left': '', 'right': '' }
 \}
 
 if has("win32") || has("gui_running")
-    unlet g:lightline.separator
-    unlet g:lightline.subseparator
+	unlet g:lightline.separator
+	unlet g:lightline.subseparator
 endif
 
 " bufferline
@@ -111,9 +111,9 @@ set mat=2
 set ruler
 set relativenumber
 if exists("+colorcolumn")
-    set colorcolumn=80
+	set colorcolumn=80
 else
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+	au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
 " Editor
@@ -122,9 +122,9 @@ colorscheme Tomorrow-Night-Bright
 color Tomorrow-Night-Bright
 
 if has("win32")
-    set guifont=M+_2m_regular:h16
+	set guifont=M+_2m_regular:h16
 else
-    set guifont=Envy\ Code\ R\ for\ Powerline:h18
+	set guifont=Envy\ Code\ R\ for\ Powerline:h18
 endif
 
 set encoding=utf8
@@ -165,46 +165,46 @@ nnoremap <silent> <right> :bn<CR>
 noremap <silent> <C-g> :TagbarToggle<CR>
 
 if has("gui_running")
-    let g:lightline={
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-    \ }
-    " " map each number to its shift-key character
-    " inoremap 1 !
-    " inoremap 2 @
-    " inoremap 3 #
-    " inoremap 4 $
-    " inoremap 5 %
-    " inoremap 6 ^
-    " inoremap 7 &
-    " inoremap 8 *
-    " inoremap 9 (
-    " inoremap 0 )
-    " "inoremap - _
-    " " and then the opposite
-    " inoremap ! 1
-    " inoremap @ 2
-    " inoremap # 3
-    " inoremap $ 4
-    " inoremap % 5
-    " inoremap ^ 6
-    " inoremap & 7
-    " inoremap * 8
-    " inoremap ( 9
-    " inoremap ) 0
-    " "inoremap _ -
+	let g:lightline={
+	  \ 'active': {
+	  \   'left': [ [ 'mode', 'paste' ],
+	  \				[ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+	  \ },
+	  \ 'component': {
+	  \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+	  \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+	  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+	  \ },
+	  \ 'component_visible_condition': {
+	  \   'readonly': '(&filetype!="help"&& &readonly)',
+	  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+	  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+	  \ },
+	\ }
+	" " map each number to its shift-key character
+	" inoremap 1 !
+	" inoremap 2 @
+	" inoremap 3 #
+	" inoremap 4 $
+	" inoremap 5 %
+	" inoremap 6 ^
+	" inoremap 7 &
+	" inoremap 8 *
+	" inoremap 9 (
+	" inoremap 0 )
+	" "inoremap - _
+	" " and then the opposite
+	" inoremap ! 1
+	" inoremap @ 2
+	" inoremap # 3
+	" inoremap $ 4
+	" inoremap % 5
+	" inoremap ^ 6
+	" inoremap & 7
+	" inoremap * 8
+	" inoremap ( 9
+	" inoremap ) 0
+	" "inoremap _ -
 else
-    set t_Co=256
+	set t_Co=256
 endif
