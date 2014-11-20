@@ -77,15 +77,21 @@ let g:lightline={
 	\	]
 	\},
 	\'component': {
-	\	'readonly': '%{&readonly?"":""}',
-	\	'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+	\	'readonly': '%{&readonly?"":""}'
 	\},
-	\'component_visible_condition': {
-	\	'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+	\'component_function': {
+	\	'fugitive': 'MyFugitive'
 	\},
 	\'separator': { 'left': '', 'right': '' },
 	\'subseparator': { 'left': '', 'right': '' }
 \}
+function! MyFugitive()
+	if exists("*fugitive#head")
+		let _ = fugitive#head()
+		return strlen(_) ? ' '._ : ''
+	endif
+	return ''
+endfunction
 
 if has("win32") || has("gui_running")
 	unlet g:lightline.separator
@@ -175,22 +181,6 @@ nnoremap <silent> <right> :bn<CR>
 noremap <silent> <C-g> :TagbarToggle<CR>
 
 if has("gui_running")
-	let g:lightline={
-	  \ 'active': {
-	  \   'left': [ [ 'mode', 'paste' ],
-	  \				[ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-	  \ },
-	  \ 'component': {
-	  \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-	  \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-	  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-	  \ },
-	  \ 'component_visible_condition': {
-	  \   'readonly': '(&filetype!="help"&& &readonly)',
-	  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-	  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-	  \ },
-	\ }
 	" " map each number to its shift-key character
 	" inoremap 1 !
 	" inoremap 2 @
