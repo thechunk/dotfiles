@@ -76,15 +76,22 @@ let g:lightline={
 	\		[ 'fugitive', 'readonly', 'filename', 'modified' ]
 	\	]
 	\},
-	\'component': {
-	\	'readonly': '%{&readonly?"":""}'
-	\},
 	\'component_function': {
+	\	'readonly': 'MyReadonly',
 	\	'fugitive': 'MyFugitive'
 	\},
 	\'separator': { 'left': '', 'right': '' },
 	\'subseparator': { 'left': '', 'right': '' }
 \}
+function! MyReadonly()
+	if &filetype == "help"
+		return ""
+	elseif &readonly
+		return ""
+	else
+		return ""
+	endif
+endfunction
 function! MyFugitive()
 	if exists("*fugitive#head")
 		let _ = fugitive#head()
