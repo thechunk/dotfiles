@@ -70,8 +70,18 @@ let g:ctrlp_clear_cache_on_exit=0
 
 " lightline
 let g:lightline={
+	\'active': {
+	\	'left': [
+	\		['mode', 'paste'],
+	\		[ 'fugitive', 'readonly', 'filename', 'modified' ]
+	\	]
+	\},
 	\'component': {
-	\	 'readonly': '%{&readonly?"":""}',
+	\	'readonly': '%{&readonly?"":""}',
+	\	'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+	\},
+	\'component_visible_condition': {
+	\	'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
 	\},
 	\'separator': { 'left': '', 'right': '' },
 	\'subseparator': { 'left': '', 'right': '' }
