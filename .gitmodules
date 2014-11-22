@@ -13,3 +13,6 @@
 [submodule "vendor/luakit-plugins"]
 	path = vendor/luakit-plugins
 	url = git@github.com:thechunk/luakit-plugins.git
+[submodule "vendor/vimperator-colors"]
+	path = vendor/vimperator-colors
+	url = git@github.com:vimpr/vimperator-colors.git
