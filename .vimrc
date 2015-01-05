@@ -27,6 +27,7 @@ Bundle 'vim-scripts/matchit.zip'
 
 " Bundles - Source control
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
 
 " Bundles - Editing
 Bundle 'kien/ctrlp.vim'
