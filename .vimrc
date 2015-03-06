@@ -24,6 +24,9 @@ Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/matchit.zip'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'lukaszkorecki/CoffeeTags'
+Bundle 'burnettk/vim-angular'
 
 " Bundles - Source control
 Bundle 'tpope/vim-fugitive'
