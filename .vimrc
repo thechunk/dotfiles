@@ -35,7 +35,6 @@ Bundle 'airblade/vim-gitgutter'
 " Bundles - Editing
 Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-multiple-cursors'
-" Bundle 'tpope/vim-capslock'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-sleuth'
 Bundle 'Townk/vim-autoclose'
@@ -43,7 +42,6 @@ Bundle 'Townk/vim-autoclose'
 " Bundles - Functional
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'majutsushi/tagbar'
-" Bundle 'scrooloose/nerdtree'
 Bundle 'thinca/vim-localrc'
 Bundle 'tpope/vim-characterize'
 Bundle 'tpope/vim-repeat'
@@ -57,10 +55,7 @@ Bundle 'itchyny/lightline.vim'
 
 call vundle#end()
 
-" General
-filetype plugin indent on
-set autoread
-
+" Plugins
 " ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 let g:ctrlp_custom_ignore = 'tmp$\|\.(git|hg|svn)$\|.rvm$\|.bundle$\|.sass\-cache$\|\v[\/](bower_components|node_modules|vendor)'
@@ -83,15 +78,13 @@ let g:lightline={
 	\'component_function': {
 	\	'readonly': 'MyReadonly',
 	\	'fugitive': 'MyFugitive'
-	\},
-	\'separator': { 'left': '', 'right': '' },
-	\'subseparator': { 'left': '', 'right': '' }
+	\}
 \}
 function! MyReadonly()
 	if &filetype == "help"
 		return ""
 	elseif &readonly
-		return ""
+		return "ro"
 	else
 		return ""
 	endif
@@ -99,15 +92,10 @@ endfunction
 function! MyFugitive()
 	if exists("*fugitive#head")
 		let _ = fugitive#head()
-		return strlen(_) ? ' '._ : ''
+		return strlen(_) ? _ : ''
 	endif
 	return ''
 endfunction
-
-if has("win32") || has("gui_running")
-	unlet g:lightline.separator
-	unlet g:lightline.subseparator
-endif
 
 " bufferline
 let g:bufferline_echo=1
@@ -118,6 +106,14 @@ let g:PreserveNoEOL=1
 
 " tagbar
 let g:tagbar_autofocus=1
+
+" netrw
+let g:netrw_localrmdir='rm -r'
+
+" General
+filetype plugin indent on
+set autoread
+set t_Co=256
 
 " UI
 set laststatus=2
@@ -145,14 +141,10 @@ endif
 
 " Editor
 syntax enable
-colorscheme Tomorrow-Night-Bright
-color Tomorrow-Night-Bright
+colorscheme Tomorrow
+color Tomorrow
 
-if has("win32")
-	set guifont=M+_2m_regular:h16
-else
-	set guifont=Envy\ Code\ R\ for\ Powerline:h18
-endif
+set guifont=M+_2m_regular:h14
 
 set encoding=utf8
 set ffs=unix,dos,mac
@@ -190,32 +182,3 @@ nnoremap <silent> <left> :bp<CR>
 nnoremap <silent> <right> :bn<CR>
 
 noremap <silent> <C-g> :TagbarToggle<CR>
-
-if has("gui_running")
-	" " map each number to its shift-key character
-	" inoremap 1 !
-	" inoremap 2 @
-	" inoremap 3 #
-	" inoremap 4 $
-	" inoremap 5 %
-	" inoremap 6 ^
-	" inoremap 7 &
-	" inoremap 8 *
-	" inoremap 9 (
-	" inoremap 0 )
-	" "inoremap - _
-	" " and then the opposite
-	" inoremap ! 1
-	" inoremap @ 2
-	" inoremap # 3
-	" inoremap $ 4
-	" inoremap % 5
-	" inoremap ^ 6
-	" inoremap & 7
-	" inoremap * 8
-	" inoremap ( 9
-	" inoremap ) 0
-	" "inoremap _ -
-else
-	set t_Co=256
-endif
