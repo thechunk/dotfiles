@@ -22,3 +22,6 @@
 [submodule ".zprezto"]
 	path = .zprezto
 	url = git@github.com:thechunk/prezto.git
+[submodule "vendor/zsh-history-substring-search"]
+	path = vendor/zsh-history-substring-search
+	url = git@github.com:zsh-users/zsh-history-substring-search.git

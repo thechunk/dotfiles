@@ -48,6 +48,8 @@ Bundle 'tpope/vim-repeat'
 Bundle 'yegappan/grep'
 Bundle 'vim-scripts/loremipsum'
 Bundle 'tpope/vim-vinegar'
+Bundle 'jceb/vim-orgmode'
+Bundle 'tpope/vim-speeddating'
 
 " Bundles - UI
 Bundle 'bling/vim-bufferline'
@@ -78,7 +80,9 @@ let g:lightline={
 	\'component_function': {
 	\	'readonly': 'MyReadonly',
 	\	'fugitive': 'MyFugitive'
-	\}
+	\},
+	\'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+	\'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
 \}
 function! MyReadonly()
 	if &filetype == "help"
@@ -146,7 +150,8 @@ color Tomorrow
 
 set guifont=M+_2m_regular:h14
 
-set encoding=utf8
+scriptencoding utf-8
+set encoding=utf-8
 set ffs=unix,dos,mac
 
 set exrc
@@ -164,11 +169,12 @@ set smartindent
 set wrap
 
 set list
-set listchars=tab:⇥\ ,nbsp:·,trail:␣,extends:▸,precedes:◂,eol:$
+set listchars=tab:→\ ,nbsp:·,trail:␣,extends:▸,precedes:◂,eol:$
 
 " Bindings
 let mapleader=","
 let g:mapleader=","
+let maplocalleader=","
 
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 nnoremap <silent> <leader>n gt

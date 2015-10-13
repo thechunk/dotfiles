@@ -1,9 +1,9 @@
 colorscheme indigo
 
-hi -append Hint font-family: 'Envy Code R for Powerline'; font-size: 18px; padding: 4px; border-radius: 2px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
-hi -append CmdLine>* font-family: 'Envy Code R for Powerline'; font-size: 12px;
-hi -append CompResult font-family: 'Envy Code R for Powerline'; font-size: 12px; padding: 2px 0;
-hi -append CompDesc font-family: 'Envy Code R for Powerline'; font-size: 12px; padding: 2px 0;
+hi -append Hint font-family: 'M+ 2m'; font-size: 18px; padding: 4px; border-radius: 2px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
+hi -append CmdLine>* font-family: 'M+ 2m'; font-size: 14px;
+hi -append CompResult font-family: 'M+ 2m'; font-size: 14px; padding: 2px 0;
+hi -append CompDesc font-family: 'M+ 2m'; font-size: 14px; padding: 2px 0;
 hi -append CompTitle font-weight: normal;
-hi -append StatusLine font-family: 'Envy Code R for Powerline'; font-size: 12px;
-hi -append InfoMsg font-family: 'Envy Code R for Powerline'; font-size: 12px;
+hi -append StatusLine font-family: 'M+ 2m'; font-size: 14px;
+hi -append InfoMsg font-family: 'M+ 2m'; font-size: 14px;
