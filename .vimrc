@@ -24,8 +24,8 @@ Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/matchit.zip'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'lukaszkorecki/CoffeeTags'
+" Bundle 'kchmck/vim-coffee-script'
+" Bundle 'lukaszkorecki/CoffeeTags'
 Bundle 'burnettk/vim-angular'
 
 " Bundles - Source control
@@ -58,6 +58,8 @@ Bundle 'itchyny/lightline.vim'
 call vundle#end()
 
 " Plugins
+let g:syntastic_javascript_checkers = ['eslint']
+
 " ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 let g:ctrlp_custom_ignore = 'tmp$\|\.(git|hg|svn)$\|.rvm$\|.bundle$\|.sass\-cache$\|\v[\/](bower_components|node_modules|vendor)'
