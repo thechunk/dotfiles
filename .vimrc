@@ -24,32 +24,24 @@ Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/matchit.zip'
-" Bundle 'kchmck/vim-coffee-script'
-" Bundle 'lukaszkorecki/CoffeeTags'
-Bundle 'burnettk/vim-angular'
 
 " Bundles - Source control
-Bundle 'tpope/vim-fugitive'
+Bundle 'jreybert/vimagit'
 Bundle 'airblade/vim-gitgutter'
 
 " Bundles - Editing
 Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-sleuth'
-Bundle 'Townk/vim-autoclose'
+Bundle 'Raimondi/delimitMate'
 
 " Bundles - Functional
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'thinca/vim-localrc'
 Bundle 'tpope/vim-characterize'
-Bundle 'tpope/vim-repeat'
-Bundle 'yegappan/grep'
 Bundle 'vim-scripts/loremipsum'
 Bundle 'tpope/vim-vinegar'
-Bundle 'jceb/vim-orgmode'
-Bundle 'tpope/vim-speeddating'
+Bundle 'samsonw/vim-task'
 
 " Bundles - UI
 Bundle 'bling/vim-bufferline'
@@ -58,15 +50,15 @@ Bundle 'itchyny/lightline.vim'
 call vundle#end()
 
 " Plugins
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint', 'jshint', 'jscs']
 
 " ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 let g:ctrlp_custom_ignore = 'tmp$\|\.(git|hg|svn)$\|.rvm$\|.bundle$\|.sass\-cache$\|\v[\/](bower_components|node_modules|vendor)'
 let g:ctrlp_working_path_mode = 'ra'
-"let g:ctrlp_match_window_bottom=1
+" let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=16
-"let g:ctrlp_match_window_reversed=0
+" let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 let g:ctrlp_clear_cache_on_exit=0
