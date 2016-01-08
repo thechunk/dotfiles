@@ -40,7 +40,6 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-characterize'
 Bundle 'vim-scripts/loremipsum'
-Bundle 'tpope/vim-vinegar'
 Bundle 'samsonw/vim-task'
 
 " Bundles - UI
@@ -103,10 +102,11 @@ let g:bufferline_fname_mod=':t'
 let g:PreserveNoEOL=1
 
 " tagbar
-let g:tagbar_autofocus=1
+" let g:tagbar_autofocus=1
 
 " netrw
 let g:netrw_localrmdir='rm -r'
+let g:netrw_liststyle=1
 
 " General
 filetype plugin indent on
@@ -178,7 +178,7 @@ nnoremap <silent> <leader>s :sp<CR>
 nnoremap <silent> <leader>v :vsp<CR>
 nnoremap <silent> <leader>qq :bw<CR>
 
-nnoremap <silent> <left> :bp<CR>
-nnoremap <silent> <right> :bn<CR>
+" nnoremap <silent> <left> :bp<CR>
+" nnoremap <silent> <right> :bn<CR>
 
 noremap <silent> <C-g> :TagbarToggle<CR>
