@@ -128,7 +128,10 @@ color Tomorrow
 set guifont=M+_2m_regular:h14
 
 scriptencoding utf-8
-set encoding=utf-8
+if has('nvim')
+else
+	set encoding=utf-8
+endif
 set ffs=unix,dos,mac
 
 set exrc
