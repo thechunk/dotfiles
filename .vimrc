@@ -1,52 +1,35 @@
-" Pathogen
-execute pathogen#infect()
-
-" Vundle
-set nocompatible			" be iMproved, required
-filetype off				" required
-
-" set the runtime path to include Vundle and initialize
-if has("win32")
-	set rtp+=~/vimfiles/bundle/Vundle.vim
-	let path='~/vimfiles/bundle'
-	call vundle#begin(path)
-else
-	set rtp+=~/.vim/bundle/Vundle.vim
-	call vundle#begin()
-endif
-
-Bundle 'gmarik/Vundle.vim'
+call plug#begin()
 
 " Bundles - Language-specific
-Bundle 'einars/js-beautify'
-Bundle 'maksimr/vim-jsbeautify'
-Bundle 'mattn/emmet-vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/matchit.zip'
+Plug 'einars/js-beautify'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'mattn/emmet-vim'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/matchit.zip'
 
 " Bundles - Source control
-Bundle 'jreybert/vimagit'
-Bundle 'airblade/vim-gitgutter'
+Plug 'jreybert/vimagit'
+Plug 'airblade/vim-gitgutter'
 
 " Bundles - Editing
-Bundle 'kien/ctrlp.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tpope/vim-commentary'
-Bundle 'Raimondi/delimitMate'
+Plug 'kien/ctrlp.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
+Plug 'Raimondi/delimitMate'
 
 " Bundles - Functional
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'tpope/vim-characterize'
-Bundle 'vim-scripts/loremipsum'
-Bundle 'samsonw/vim-task'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-characterize'
+Plug 'vim-scripts/loremipsum'
+Plug 'samsonw/vim-task'
 
 " Bundles - UI
-Bundle 'bling/vim-bufferline'
-Bundle 'itchyny/lightline.vim'
+Plug 'bling/vim-bufferline'
+Plug 'itchyny/lightline.vim'
 
-call vundle#end()
+call plug#end()
 
 " Plugins
 let g:syntastic_javascript_checkers = ['eslint', 'jshint', 'jscs']
@@ -177,8 +160,5 @@ nnoremap <silent> <leader>t :tabnew<CR>
 nnoremap <silent> <leader>s :sp<CR>
 nnoremap <silent> <leader>v :vsp<CR>
 nnoremap <silent> <leader>qq :bw<CR>
-
-" nnoremap <silent> <left> :bp<CR>
-" nnoremap <silent> <right> :bn<CR>
 
 noremap <silent> <C-g> :TagbarToggle<CR>
