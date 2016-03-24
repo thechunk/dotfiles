@@ -7,9 +7,11 @@ Plug 'mattn/emmet-vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/matchit.zip'
+Plug 'kchmck/vim-coffee-script'
 
 " Bundles - Source control
 Plug 'jreybert/vimagit'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Bundles - Editing
@@ -163,5 +165,7 @@ nnoremap <silent> <leader>t :tabnew<CR>
 nnoremap <silent> <leader>s :sp<CR>
 nnoremap <silent> <leader>v :vsp<CR>
 nnoremap <silent> <leader>qq :bw<CR>
+
+nnoremap <silent> - :Explore<CR>
 
 noremap <silent> <C-g> :TagbarToggle<CR>
